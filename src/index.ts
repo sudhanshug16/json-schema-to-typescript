@@ -83,6 +83,10 @@ export interface Options {
    * @default 'block'
    */
   commentStyle: 'block' | 'line'
+  /**
+   * Expand the title field of each property into a separate type
+   */
+  useSchemaTitleAsPropertyType: boolean
 }
 
 export const DEFAULT_OPTIONS: Options = {
@@ -113,6 +117,7 @@ export const DEFAULT_OPTIONS: Options = {
   unreachableDefinitions: false,
   unknownAny: true,
   commentStyle: 'block',
+  useSchemaTitleAsPropertyType: true,
 }
 
 export function compileFromFile(filename: string, options: Partial<Options> = DEFAULT_OPTIONS): Promise<string> {
